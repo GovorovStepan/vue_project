@@ -1,28 +1,33 @@
 <template>
 <el-table
           :data="tableData"
-          height="1000"
+          border
           style="width: 100%">
           <el-table-column
             type="index"
             :index="indexMethod"
-            label="Код товара">
+            label="Код товара"
+            width="100">
           </el-table-column>
           <el-table-column
             prop="name"
-            label="Наименование">
+            label="Наименование"
+            width="130">
           </el-table-column>
           <el-table-column
             prop="art"
-            label="Артикул">
+            label="Артикул"
+            width="100">
           </el-table-column>
           <el-table-column
             prop=""
-            label="Колличество заказанного товара">
+            label="Колличество заказанного товара"
+            width="200">
           </el-table-column>
           <el-table-column
             prop=""
-            label="Дата доставки">
+            label="Дата доставки"
+            width="150">
           </el-table-column>
         </el-table>
 </template>

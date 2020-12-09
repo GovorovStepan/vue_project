@@ -1,9 +1,13 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
+    <div class='block'>
+      <Tree class="tree"/>
+      <Side/>
+    </div>
+     
     <el-tabs type="card" @tab-click="handleClick">
       <el-tab-pane label="Результаты поиска"><h3>Результаты поиска</h3>
-          <Table1/>
+        <Table1/>
       </el-tab-pane>
       <el-tab-pane label="Составной товар"><h3>Составной товар</h3>
         <Table2/>
@@ -32,6 +36,8 @@ import Table3 from './components/Table_3.vue'
 import Table4 from './components/Table_4.vue'
 import Table5 from './components/Table_5.vue'
 import Table6 from './components/Table_6.vue'
+import Tree from './components/Tree.vue'
+import Side from './components/Side_block.vue'
 
 export default {
   name: 'App',
@@ -41,7 +47,9 @@ export default {
     Table3,
     Table4,
     Table5,
-    Table6
+    Table6,
+    Tree,
+    Side
     
   }
 }
@@ -55,16 +63,33 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+  padding: 15px;
   margin-left: auto;
   margin-right: auto;
   max-width: 1160px;
   width: 100%;
   max-height: 870px;
+  overflow:auto;
 }
 
+.el-message-box{
+    width: auto;
+}
+
+.tree{
+  width: 30%;    
+  overflow: auto;
+  max-height: 350px;
+  }
+.block{
+  border-radius: 4px;
+  display:flex;
+  padding-bottom: 50px;
+  }
 h3 {
   margin: 40px 0 0;
+  padding-bottom: 20px;
 }
 ul {
   list-style-type: none;
@@ -77,5 +102,6 @@ li {
 a {
   color: #42b983;
 }
+el-table{height: 100%;}
 </style>
 

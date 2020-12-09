@@ -1,40 +1,48 @@
 <template>
 <el-table
           :data="tableData"
-          height="1000"
+          border
           style="width: 100%">
           <el-table-column
             type="index"
             :index="indexMethod"
-            label="Код товара">
+            label="Код товара"
+            width="100">
           </el-table-column>
           <el-table-column
             prop="name"
-            label="Наименование">
+            label="Наименование"
+            width="130">
           </el-table-column>
           <el-table-column
             prop="art"
-            label="Артикул">
+            label="Артикул"
+            width="100">
           </el-table-column>
           <el-table-column
             prop=""
-            label="Колличество зарезервироанного товара">
+            label="Колличество зарезервироанного товара"
+            width="200">
           </el-table-column>
           <el-table-column
             prop=""
-            label="ФИО менеджера">
+            label="ФИО менеджера"
+            width="150">
           </el-table-column>
           <el-table-column
             prop=""
-            label="Количество зарезервированного товара  новой поставки">
+            label="Количество зарезервированного товара  новой поставки"
+            width="260">
           </el-table-column>
           <el-table-column
             prop=""
-            label="ФИО менеджера новой поставки">
+            label="ФИО менеджера новой поставки"
+            width="190">
           </el-table-column>
           <el-table-column
             prop=""
-            label="Тип цены">
+            label="Тип цены"
+            width="150">
             <el-select v-model="value" placeholder="Выбрать тип">
           <el-option
             v-for="item in options"
@@ -46,7 +54,8 @@
           </el-table-column>
            <el-table-column
             prop=""
-            label="Тип товара">
+            label="Тип товара"
+            width="150">
             <el-select v-model="value" placeholder="Выбрать тип">
           <el-option
             v-for="item in goods"
@@ -57,7 +66,8 @@
         </el-select>
           </el-table-column>
 
-          <el-table-column>
+          <el-table-column
+          width="150">
               <el-button type="text" size="small">Изменить кол-во</el-button>
           </el-table-column>
         </el-table>
@@ -68,7 +78,6 @@
     data() {
       return {
         tableData: [{
-          index: '1',
           name: 'China',
           art: '1,333,240,000'
         }],

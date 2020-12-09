@@ -1,38 +1,57 @@
 <template>
+<div>
  <el-table
           :data="tableData"
-          height="1000"
+          border
           style="width: 100%">
+          
           <el-table-column
             type="index"
             :index="indexMethod"
-            label="Код товара">
+            label="Код товара"
+            width="100">
           </el-table-column>
           <el-table-column
             prop="name"
-            label="Наименование">
+            label="Наименование"
+            width="130">
           </el-table-column>
           <el-table-column
             prop="art"
-            label="Артикул">
+            label="Артикул"
+            width="100">
           </el-table-column>
           <el-table-column
             prop=""
-            label="Дата оплаты">
+            label="Дата оплаты"
+            width="110"
+            >
           </el-table-column>
           <el-table-column
             prop=""
-            label="Сумма оплаты">
+            label="Сумма оплаты"
+            width="130">
           </el-table-column>
           <el-table-column
             prop=""
-            label="номер счета">
+            label="Номер счета"
+            width="120">
           </el-table-column>
           <el-table-column
             prop=""
-            label="Тип оплаты">
+            label="Тип оплаты"
+            width="120">
           </el-table-column>
         </el-table>
+        <div class="bottom-container">
+          <h4>Документы:</h4> 
+          <div>
+            <el-button class='bottom_btn' type="button" size="large">Торг12</el-button>
+            <el-button class='bottom_btn' type="button" size="large">СФ</el-button>
+            <el-button class='bottom_btn' type="button" size="large">УПД</el-button>
+          </div>
+        </div>
+        </div>
 </template>
 
 <script>
@@ -40,7 +59,6 @@
     data() {
       return {
         tableData: [{
-          index: '1',
           name: 'China',
           art: '1,333,240,000'
         }]
@@ -48,3 +66,19 @@
     }
   }
 </script>
+
+
+
+<style scoped>
+h4{
+  padding-top: 10px;
+}
+.bottom-container{ 
+  display:flex;
+  justify-content: center;
+  }
+
+.bottom_btn{    
+  margin: 20px
+}
+</style>
