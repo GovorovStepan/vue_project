@@ -28,12 +28,14 @@
           </el-option>
         </el-select>
       </el-table-column>
+         <!--
       <el-table-column
         prop="btn"
         label="Согласовать стоимость"
         width="220">
         <el-checkbox v-model="checked">Ответственный Пан Пан</el-checkbox>
       </el-table-column>
+      -->
     </el-table>
 </div>
 </template>

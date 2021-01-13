@@ -5,8 +5,7 @@
             :fetch-suggestions="querySearchAsync"
             placeholder="Начните вводить название товара"
             @select="handleSelect"
-            size= "large"
-            >
+            size= "large">
         </el-autocomplete>
 </template>
 

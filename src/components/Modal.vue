@@ -1,46 +1,71 @@
 <template>
-  <el-button type="button" @click="open">Добавить в текущий резерв</el-button>
+    <div>
+        <el-button type="primary" @click="editOrderVisible = true" icon="el-icon-circle-plus-outline">
+            <slot />
+        </el-button>
+        <el-dialog :visible.sync="editOrderVisible" width="720px">
+            <el-table :data="tableData" style="width: 100%">
+                <el-table-column prop="name" label="Наименование" width="250">
+                    <div>Код товара: 25164</div>
+                    <div>Наименование: Chine</div>
+                    <div>Артикул: 100045646</div>
+                </el-table-column>
+                <el-table-column prop="county" label="Колличество" width="250">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>СПБ: </td>
+                                <td><el-input-number size="small" v-model="num" :min="1" :max="10" /></td>
+                            </tr>
+                            <tr>
+                                <td>Москва: </td>
+                                <td><el-input-number size="small" v-model="num" :min="1" :max="10" /></td>
+                            </tr>
+                            <tr>
+                                <td>Поставка: </td>
+                                <td><el-input-number size="small" v-model="num" :min="1" :max="10" /></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </el-table-column>
+                <el-table-column prop="type" label="Тип цены" width="180">
+                    <el-select v-model="value" placeholder="Выбрать тип">
+                        <el-option :key="item.value" :label="item.label" v-for="item in options" :value="item.value" />
+                    </el-select>
+                </el-table-column>
+            </el-table>
+
+            <div style="margin-top: 20px; text-align: left;">
+                Дата окончания брони: <el-date-picker type="date" />
+            </div>
+
+        </el-dialog>
+    </div>
+
 </template>
 
 <script>
-import ModalContent from './Modal_content.vue'
-  export default {
-    methods: {
-      open() {
-        this.$msgbox({
-        customClass:'modal-container',
-          title: 'Формирование нового резерва',
-          message: <ModalContent/>,
-          confirmButtonText: 'Добавить в текущий резерв',
-          beforeClose: (action, instance, done) => {
-            if (action === 'confirm') {
-              instance.confirmButtonLoading = true;
-              instance.confirmButtonText = 'Loading...';
-              setTimeout(() => {
-                done();
-                setTimeout(() => {
-                  instance.confirmButtonLoading = false;
-                }, 300);
-              }, 3000);
-            } else {
-              done();
+    export default {
+        methods: {},
+        data() {
+            return {
+                num: 1,
+                editOrderVisible: false,
+                tableData: [{}],
+                options: [{
+                    value: 'Закупочная',
+                    label: 'Закупочная'
+                },{
+                    value: 'Обычная',
+                    label: 'Обычная'
+                },{
+                    value: 'Пользовательская',
+                    label: 'Пользовательская'
+                } ],
             }
-          }
-        }).then(action => {
-          this.$message({
-            type: 'info',
-            message: 'action: ' + action
-          });
-        });
-      },
-      name: 'Modal',
-         components: {
-            ModalContent}
+        },
+        name: 'Modal',
+        components: {}
     }
-  }
 </script>
-
-<style scoped>
-.modal-container{width: auto !important;
-width: 1000px;}
-</style>
+<style scoped />

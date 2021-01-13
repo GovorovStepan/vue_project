@@ -67,7 +67,7 @@
           </el-table-column>
         </el-table>
         <div class="bottom-btn_container">
-          <Modal class="bottom_btn"/>
+            <Modal class="bottom_btn">Добавить в текущий резерв</Modal>
         </div>
 </div>
 </template>
