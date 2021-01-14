@@ -1,6 +1,6 @@
 <template>
     <div>
-        <el-table :data="tableData" border style="width: 100%">
+        <el-table :data="tableData" border style="width: 100%" stripe>
 
             <el-table-column label="№" width="40" />
             <el-table-column label="Код" width="100" />
@@ -32,7 +32,7 @@
             <el-table-column label="НДС" width="100" />
             <el-table-column label="Всего" width="100" />
             <el-table-column label="Тип цены" width="150">
-                <el-select v-model="value" placeholder="Выбрать тип">
+                <el-select size="small"  v-model="value" placeholder="Выбрать тип">
                     <el-option v-for="item in options"
                             :key="item.value"
                             :label="item.label"
@@ -44,20 +44,20 @@
                 <Modal class="bottom_btn">Изменить кол-во</Modal>
             </el-table-column>
             <el-table-column width="145">
-                <el-button type="primary">
+                <el-button type="primary" size="small">
                     Освободить
                 </el-button>
             </el-table-column>
             <el-table-column width="190">
-                <el-button type="primary">
+                <el-button type="primary" size="small">
                     Разукомплектовать
                 </el-button>
             </el-table-column>
         </el-table>
 
         <div style="margin-top: 20px; text-align: left;">
-            <el-button type="primary">Возврат</el-button>
-            <el-button type="primary">Продить все товары</el-button>
+            <el-button type="primary" size="small">Возврат</el-button>
+            <el-button type="primary" size="small">Продить все товары</el-button>
         </div>
 
     </div>

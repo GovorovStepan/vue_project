@@ -40,10 +40,10 @@
         </el-table>
 
         <div style="display: flex; margin-top: 20px;">
-            <div style="margin-right: 10px">
-                <Modal class="bottom_btn">Зарезервировать</Modal>
+            <div style="margin-right: 10px" >
+                <Modal class="bottom_btn" >Зарезервировать</Modal>
             </div>
-            <el-button type="button">
+            <el-button type="button" size="small">
                 Добавить в составной товар
             </el-button>
         </div>
@@ -58,7 +58,7 @@
             </el-table>
         </el-dialog>
 
-        <el-dialog title="Заказы по товару" :visible.sync="allOrdersVisible" width="35%">
+        <el-dialog title="Заказы по товару" :visible.sync="allOrdersVisible" width="60%">
             <el-table border :data="orders" style="width: 100%">
                 <el-table-column align="center" prop="deal" label="Сделка">
                     <el-link type="primary">Сделка</el-link>

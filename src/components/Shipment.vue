@@ -2,6 +2,7 @@
     <div>
         <el-table
                 :data="tableData"
+                stripe
                 border
                 style="width: 100%">
             <el-table-column prop="name" label="Наименование" width="130" />

@@ -1,7 +1,7 @@
 <template>
     <div>
         <el-progress :percentage="50" />
-        <el-table :data="tableData" border style="width: 100%">
+        <el-table :data="tableData" border style="width: 100%" stripe>
             <el-table-column prop="payDate" label="Дата оплаты" width="110" />
             <el-table-column prop="sum" label="Сумма оплаты" width="130" />
             <el-table-column label="Полная/Частичная" width="160" />
@@ -11,9 +11,9 @@
         <div class="bottom-container">
             <h4>Документы:</h4>
             <div>
-                <el-button class='bottom_btn' type="button" size="large">Торг12</el-button>
-                <el-button class='bottom_btn' type="button" size="large">СФ</el-button>
-                <el-button class='bottom_btn' type="button" size="large">УПД</el-button>
+                <el-button class='bottom_btn' type="button" size="small">Торг12</el-button>
+                <el-button class='bottom_btn' type="button" size="small">СФ</el-button>
+                <el-button class='bottom_btn' type="button" size="small">УПД</el-button>
             </div>
         </div>
     </div>

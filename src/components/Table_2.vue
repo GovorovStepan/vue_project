@@ -3,6 +3,7 @@
 <el-table
           :data="tableData"
           border
+          stripe
           style="width: 100%">
           <el-table-column
             type="index"
@@ -50,7 +51,7 @@
             prop=""
             label="Тип цены"
             width="150">
-            <el-select v-model="value" placeholder="Выбрать тип">
+            <el-select  size='small' v-model="value" placeholder="Выбрать тип">
           <el-option
             v-for="item in options"
             :key="item.value"
@@ -62,7 +63,7 @@
           <el-table-column label="Убрать из составного товара"
           width="180">
           <div class="flex-center">
-            <el-button type="danger" icon="el-icon-delete" circle></el-button>
+            <el-button size="small"  icon="el-icon-delete" circle></el-button>
           </div>
           </el-table-column>
         </el-table>
@@ -82,6 +83,14 @@ import Modal from './Modal.vue'
     data() {
       return {
         tableData: [{
+          name: 'China',
+          art: '1,333,240,000'
+        },
+        {
+          name: 'China',
+          art: '1,333,240,000'
+        },
+        {
           name: 'China',
           art: '1,333,240,000'
         }],
