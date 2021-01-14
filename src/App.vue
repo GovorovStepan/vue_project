@@ -4,7 +4,7 @@
       <Tree class="tree" />
       <Side />
     </div>
-    <img style='position: absolute; top: 185px; right: 33px;' src="https://velesexpert.velespro.ru/cats/1c-cat.png">
+
     <el-tabs type="card" @tab-click="handleClick">
       <el-tab-pane label="Подбор товара">
         <h3>Подбор товара</h3>
